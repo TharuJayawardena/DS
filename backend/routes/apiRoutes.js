@@ -5,7 +5,7 @@ const {getHotels,  addHotels, updateHotels,  deleteHotels} = require('../control
 
 router.get("/hotels",getHotels)
 router.post("/hotels",addHotels)
-router.patch("/hotels",updateHotels)
+router.put("/hotels",updateHotels)
 router.delete("/hotels", deleteHotels)
 
 

@@ -53,10 +53,13 @@ const addHotels = async (req, res)  => {
 
 const deleteHotels = async (req, res) => {
     const { id } = req.query;
-
+    console.log(id);
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    await hotel.findByIdAndRemove(id);
+
+    const result = await hotel.findById(id);
+    await hotel.remove(result);
+
 
     res.json({ message: "Post deleted successfully." });
 }
